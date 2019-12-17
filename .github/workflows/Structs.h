@@ -36,9 +36,7 @@ typedef struct {
 } Club;
 
 typedef struct {
-	char homeTeam[30];
-	char awayTeam[30];
-	char matchResult[7]; //00 - 00
+	Results result;
 	int goalsScored;
 	int goalsTaken;
 	int gamesDisputed;
@@ -46,4 +44,15 @@ typedef struct {
 	int gamesLost;
 	int gamesTied;
 } ResultTable;
-Boa tarde
+
+typedef struct {
+	char homeTeam[30];
+	char visitorTeam[30];
+} Calendar;
+
+typedef struct {
+	char homeTeam[30];
+	int homeTeamGoals;
+	char visitorTeam[30];
+	int visitorTeamGoals;
+} Results;
