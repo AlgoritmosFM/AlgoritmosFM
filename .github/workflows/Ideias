@@ -1,1 +1,8 @@
-
+-> Entre a equipa A e B ambas têm de fazer 1 jogo em casa.
+-> As equipas só se podem encontrar 2 vezes. 1 vez em casa, 1 vez fora.
+-> Apenas 3 compras por equipa no inicio da época
+-> Caso os fundos cheguem a 0 o clube perde todos os jogos.
+-> As despesas exitem de 4 em 4 jogos.
+-> Os lucros são calculados em todos os jogos.
+-> Depois de ser contratado o salário do jogo sobe em 1,5%
+-> Cada equipa tem 20 jogadores iniciais podendo adicionar mais
