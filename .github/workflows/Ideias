@@ -11,3 +11,6 @@
 -> 3 substituições por jogo, apenas ao intervalo
 -> Tática do utilizador (5-3-2; 4-5-1; 4-4-2; 4-3-3)
 -> Equação para compra de jogador: Valor = Salário * 5 * número de meses de contrato que faltam cumprir
+-> Cada equipa tem pontos. Vitória = 3 pontos, Empate = 1 ponto, Derrota = 0 pontos
+-> No inicio da temporada os pontos são resetados
+-> A tabela de classificações deve ser ordenada no final de cada jogo por pontos, do maior para o menor
