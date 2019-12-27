@@ -1,0 +1,24 @@
+-> O utilizador escolher a equipa que quer treinar
+  - Saber as equipas que vão participar dinamicamente;
+  - Ao escolher uma equipa, ao ínves de começar a treinar essa equipa, poder ver os detalhes da mesma (jogadores, fundos, estádio)
+    com opção de voltar para trás;
+
+-> Criar nova época automaticamente
+  - Saber as equipas que vão participar dinamicamente;
+  - Criar um calendário que respeite as normas;
+  - Ser possível ao utilizador contratar até 3 jogadores de outras equipas;
+  - Saber qual o próximo jogo do treinador;
+  - Percorrer os jogos do calendário e guardar os resultados em outro ficheiro para caso o utilizador queira verificar os 
+    resultados anteriores do seu e dos outros clubes, (ordenar por clube);
+   
+-> Opções de treinador
+  - Alterar a tática no ínicio e a meio do jogo;
+  - Alterar os jogadores no ínicio e a meio do jogo (máximo de 3 substituições a meio do jogo);
+  
+-> Jornada
+  - A cada jogo o resultado deve ser avaliado e cada equipa deve receber os pontos relativos ao resultado (3 por vitória, 1 por
+    empate, 0 por derrota);
+  - No final de todos os jogos calcular os fundos que o clube da casa ganhou consuante a lotação do estádio (valor random entre 0
+    100);
+  - A cada 4 jogos o clube tem de pagar salários e as despesas do estádio;
+  - Calcular a probabilidade de haver golos durante um jogo entre 2 equipas, tendo em conta a força de cada jogador;
