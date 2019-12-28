@@ -14,3 +14,4 @@
 -> Cada equipa tem pontos. Vitória = 3 pontos, Empate = 1 ponto, Derrota = 0 pontos
 -> No inicio da temporada os pontos são resetados
 -> A tabela de classificações deve ser ordenada no final de cada jogo por pontos, do maior para o menor
+-> Cada jornada é composta por 9 jogos. 1 por equipa
