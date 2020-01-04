@@ -3,33 +3,38 @@
 #include <string.h>
 #include "Structs.h"
 
-void readTeamInfo(char teamNames[18][60])
+void readTeamInfo(char *teams)
 {
 	FILE *teamFile;
 	char teamPath[60] = "../Equipas/";
 	int playerCounter = 0;
-	int x;
 	Club clubs[18];
+	char remover[255];
 
 	for (int i = 0; i < 18; i++)
 	{
 		clubs[i].stadiumName[0] = '\0';
 
-		strcat(teamPath, teamNames[i]);
+		strcat(teamPath, teams + i * 30);
 		strcat(teamPath, ".txt");
 
 		teamFile = fopen(teamPath, "r");
 
-		fscanf(teamFile, "%s", clubs[i].teamName);
+		fgets(clubs[i].teamName, 30, teamFile);
 
-		// TODO: Read full line and store in the struct
-		while ((x = fgetc(teamFile)) != '\0')
-			strcat(clubs[i].stadiumName, (char)x);
+		printf("Nome: %s\n", clubs[i].teamName);
+
+		fgets(clubs[i].stadiumName, 30, teamFile);
+
+		printf("Estádio: %s\n", clubs[i].stadiumName);
 
 		fscanf(teamFile, "%lf", &clubs[i].stadiumPlaces);
 		fscanf(teamFile, "%lf", &clubs[i].partnersNumber);
-		fscanf(teamFile, "%lf", &clubs[i].clubFunds);
-		fscanf(teamFile, "%lf", &clubs[i].mensalSpents);
+		fscanf(teamFile, "%lf" , &clubs[i].clubFunds);
+		fscanf(teamFile, "%lf" , &clubs[i].mensalSpents);
+
+		printf("Estádio lugares: %lf", clubs[i].stadiumPlaces);
+		printf("Estádio lugares: %lf", clubs[i].partnersNumber);
 
 		fscanf(teamFile, "%s, %s, %d", clubs[i].team.coach.coachName,
 			clubs[i].team.coach.startContractDate,
@@ -58,14 +63,14 @@ void readTeamInfo(char teamNames[18][60])
 	}
 }
 
-void addCalendar(char calendar[306][60])
+void addCalendar(char *calendar)
 {
 	// Write in the schedule file the schedule of the season
 	FILE *calendarFile;
 	calendarFile = fopen("Season.txt", "w");
-	for (int i = 0; i < 306 && calendarFile != EOF; i++)
+	for (int i = 0; i < 306; i++)
 	{
-		fprintf(calendarFile, "%s\n", calendar[i]);
+		fprintf(calendarFile, "%s\n", calendar + i * 60);
 	}
 	fclose(calendarFile);
 }
