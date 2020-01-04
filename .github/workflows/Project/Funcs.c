@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "Files.h"
+#include "Season.h"
 
 long CalcTransferValue(int salary, int monthsLeft)
 {
@@ -31,15 +33,15 @@ float TicketsProfit(int maxCapacity)
 	return profit;
 }
 
-void CreateCalendar(char teams[18][30])
+void CreateCalendar(char *team)
 {
 	// Variables
 	char calendar[306][60];
 	char equipaCasa[30];
 	char equipaFora[30];
-	char primeiroJogo[60], segundoJogo[60];
+	char primeiroJogo[60];
 	int counter = 0;
-
+	
 	// Populate the calendar array with all of the games possible
 	for (int i = 0; i < 18; i++)
 	{
@@ -47,8 +49,9 @@ void CreateCalendar(char teams[18][30])
 		{
 			if (i != j)
 			{
-				strcpy(equipaCasa, teams[i]);
-				strcpy(equipaFora, teams[j]);
+				printf("\n***** %s *****\n", team + i * 30);
+				strcpy(equipaCasa, team + i * 30);
+				strcpy(equipaFora, team + j * 30);
 
 				strcpy(primeiroJogo, equipaCasa);
 				strcat(primeiroJogo, " X ");
@@ -71,10 +74,10 @@ void CreateCalendar(char teams[18][30])
 		strcpy(calendar[i], temp);
 	}
 
-	addCalendar(calendar);
+	addCalendar((char *) calendar);
 }
 
-void ShowTeamsList(char teams[18][30])
+void ShowTeamsList(char *teams)
 {
 
 	printf("Teams List:\n");
@@ -82,13 +85,13 @@ void ShowTeamsList(char teams[18][30])
 	// Show list of the teams
 	for (int i = 0; i < 18; i++)
 	{
-		printf("%s\n", teams[i]);
+		printf("%s\n", teams + i * 30);
 	}
 }
 
-void OpenTeamFile(char teamName[30])
+void OpenTeamFile(char **teams, char chosedTeam[30])
 {
-	readTeamInfo(teamName);
+	readTeamInfo(teams);
 
 	// Change this to read into a struct
 	FILE *chosenTeam;
@@ -96,7 +99,7 @@ void OpenTeamFile(char teamName[30])
 	int x;
 
 	// ..\Equipas\chosenTeam
-	strcat(filePath, teamName);
+	strcat(filePath, chosedTeam);
 	strcat(filePath, ".txt");
 
 	chosenTeam = fopen(filePath, "r");
