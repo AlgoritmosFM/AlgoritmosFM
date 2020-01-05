@@ -33,11 +33,11 @@ typedef struct {
 	int id;
 	Team team;
 	char teamName[30];
-	char stadiumName[30];
-	double stadiumPlaces;
-	double partnersNumber;
-	double clubFunds;
-	double mensalSpents;
+	char stadiumName[50];
+	float stadiumPlaces;
+	float partnersNumber;
+	float clubFunds;
+	float mensalSpents;
 } Club;
 
 typedef struct {
