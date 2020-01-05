@@ -10,7 +10,7 @@ char teamsNames[18][30] =
 	"FC Paços de Ferreira",
 	"FC Porto",
 	"Gil Vicente",
-	"Maritimo",
+	"Marítimo",
 	"Moreirense FC",
 	"Portimonense SC",
 	"Rio Ave FC",
